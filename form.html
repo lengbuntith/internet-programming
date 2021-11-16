@@ -8,23 +8,22 @@
   </head>
   <body>
     <div id="wrapper">
-      <form action="">
+      <div style="background-color: #eee; padding-top: 5px; padding-bottom: 5px;">
+        <h2 style="padding-left: 39px;">Tell us about yourself</h2>
+      </div>
+
+      <form style="padding: 10px;" action="">
         <table width="100%" cellspacing="30px">
           <tr>
-            <td bgcolor="#eee" colspan="2">
-              <h3>Tell us about yourself</h3>
-            </td>
-          </tr>
-
-          <tr>
-            <td colspan="2"><h4>Profile Information</h4></td>
+            <td colspan="2"><b>Profile Information</b></td>
           </tr>
           <tr>
-            <td>
+            <td colspan="1">
               <label>Last Name</label>
+              <div></div>
               <input class="full-input" type="text" />
             </td>
-            <td>
+            <td colspan="1">
               <label>Last Name</label>
               <input class="full-input" type="text" />
             </td>
@@ -48,7 +47,7 @@
                   <td>
                     <span>Gender</span>
                   </td>
-                  <td>
+                  <td align="right">
                     <input type="radio" name="gender" value="male" />
                     <label>Male</label>
                     <input type="radio" name="gender" value="female" />
@@ -66,29 +65,33 @@
           </tr>
 
           <tr>
-            <td colspan="2"><h4>Current Address</h4></td>
+            <td colspan="2"><b>Current Address</b></td>
           </tr>
 
           <tr>
             <td colspan="2">
               <table width="100%">
                 <tr>
-                  <td>
-                    <select name="province">
+                  <td align="left">
+                    <select name="province" class="full-input">
                       <option value="">Province / City</option>
                       <option value="Kampong Cham">Kampong Cham</option>
                       <option value="Phnom Penh">Phnom Penh</option>
                     </select>
                   </td>
-                  <td>
-                    <select name="country">
+                  <td align="center">
+                    <select name="country" class="full-input">
                       <option value="">Country</option>
                       <option value="Cambodia">Cambodia</option>
                       <option value="USA">USA</option>
                     </select>
                   </td>
-                  <td>
-                    <input type="text" placeholder="Post Code" />
+                  <td align="right">
+                    <input
+                      type="text"
+                      class=" full-input"
+                      placeholder="Post Code"
+                    />
                   </td>
                 </tr>
 
@@ -169,36 +172,116 @@
 
           <tr>
             <td colspan="2">
-             <table border="1px" width="100%">
-               <tr>
+              <br />
+              <b>Experience</b>
+            </td>
+          </tr>
 
-                 <td colspan="1">
-                   <table width="75%">
-                    <td> <input class=" full-input" type="text" name="" id=""> </td>
-                    <td> <input class=" full-input" type="text" name="" id=""></td>
-                   </table>
-                 </td>
+          <tr>
+            <td>
+              <table width="100%">
+                <tr>
+                  <td><b>From</b></td>
+                  <td><b style="padding-left: 15px">To</b></td>
+                </tr>
 
-                 <td> 
-                   <input class=" full-input" type="text" name="" id=""> 
-                 </td>
+                <tr>
+                  <td style="padding-right: 15px">
+                    <input class=" full-input" type="text" />
+                  </td>
+                  <td style="padding-left: 15px">
+                    <input class=" full-input" type="text" />
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 15px">
+                    <input class=" full-input" type="text" />
+                  </td>
+                  <td style="padding-left: 15px">
+                    <input class=" full-input" type="text" />
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 15px">
+                    <input class=" full-input" type="text" />
+                  </td>
+                  <td style="padding-left: 15px">
+                    <input class=" full-input" type="text" />
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 15px">
+                    <input class=" full-input" type="text" />
+                  </td>
+                  <td style="padding-left: 15px">
+                    <input class=" full-input" type="text" />
+                  </td>
+                </tr>
+              </table>
+            </td>
 
-               </tr>
-             </table>
+            <td>
+              <table width="100%">
+                <tr>
+                  <td><b>Description</b></td>
+                </tr>
+                <tr>
+                  <td><input class=" full-input" type="text" /></td>
+                </tr>
+                <tr>
+                  <td><input class=" full-input" type="text" /></td>
+                </tr>
+                <tr>
+                  <td><input class=" full-input" type="text" /></td>
+                </tr>
+                <tr>
+                  <td><input class=" full-input" type="text" /></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <b>Choose your profile photo</b>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <input type="file" name="" id="" />
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2" align="right">
+              <button
+                style="background-color: blue; color: white; font-weight: bold;"
+                type="submit"
+              >
+                Submit
+              </button>
             </td>
           </tr>
         </table>
-
-        <input type="submit" value="Submit" />
       </form>
     </div>
   </body>
 
   <style>
     #wrapper {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 10px;
+      border: 1px solid;
+    }
+
+    td {
+      max-width: 100px;
+      width: 100px;
+    }
+
+    textarea {
+      width: 100%;
     }
 
     .full-input {
