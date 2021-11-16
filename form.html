@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <form action="">
+        <table width="100%" cellspacing="30px">
+          <tr>
+            <td bgcolor="#eee" colspan="2">
+              <h3>Tell us about yourself</h3>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2"><h4>Profile Information</h4></td>
+          </tr>
+          <tr>
+            <td>
+              <label>Last Name</label>
+              <input class="full-input" type="text" />
+            </td>
+            <td>
+              <label>Last Name</label>
+              <input class="full-input" type="text" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label> Email </label>
+              <input class="full-input" type="text" />
+            </td>
+            <td>
+              <label>Phone</label>
+              <input class="full-input" type="text" />
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <table width="100%">
+                <tr>
+                  <td>
+                    <span>Gender</span>
+                  </td>
+                  <td>
+                    <input type="radio" name="gender" value="male" />
+                    <label>Male</label>
+                    <input type="radio" name="gender" value="female" />
+                    <label>Female</label>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <hr />
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2"><h4>Current Address</h4></td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <table width="100%">
+                <tr>
+                  <td>
+                    <select name="province">
+                      <option value="">Province / City</option>
+                      <option value="Kampong Cham">Kampong Cham</option>
+                      <option value="Phnom Penh">Phnom Penh</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select name="country">
+                      <option value="">Country</option>
+                      <option value="Cambodia">Cambodia</option>
+                      <option value="USA">USA</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" placeholder="Post Code" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="3">
+                    <br />
+                    <textarea
+                      name="address"
+                      placeholder="Address"
+                      cols="100%"
+                      rows="3"
+                    ></textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <table width="100%">
+                <tr>
+                  <td colspan="2"><h4>Skills</h4></td>
+                </tr>
+                <tr>
+                  <td>
+                    <input name="skils" type="checkbox" value="designing" />
+                    <label>Designing</label>
+                  </td>
+                  <td>
+                    <input
+                      name="skils"
+                      type="checkbox"
+                      value="Database management"
+                    />
+                    <label>Database management</label>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input name="skils" type="checkbox" value="Coding" />
+                    <label>Coding</label>
+                  </td>
+                  <td>
+                    <input name="skils" type="checkbox" value="Debug" />
+                    <label>Debug</label>
+                  </td>
+                </tr>
+              </table>
+            </td>
+
+            <td>
+              <table width="100%">
+                <tr>
+                  <td><h4>Language</h4></td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input name="skils" type="checkbox" value="English" />
+                    <label>English</label>
+                  </td>
+                  <td>
+                    <input name="skils" type="checkbox" value="Chinese" />
+                    <label>Chinese</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input name="" type="checkbox" value="French" />
+                    <label>French</label>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+             <table border="1px" width="100%">
+               <tr>
+
+                 <td colspan="1">
+                   <table width="75%">
+                    <td> <input class=" full-input" type="text" name="" id=""> </td>
+                    <td> <input class=" full-input" type="text" name="" id=""></td>
+                   </table>
+                 </td>
+
+                 <td> 
+                   <input class=" full-input" type="text" name="" id=""> 
+                 </td>
+
+               </tr>
+             </table>
+            </td>
+          </tr>
+        </table>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+
+  <style>
+    #wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .full-input {
+      width: 100%;
+    }
+  </style>
+</html>
