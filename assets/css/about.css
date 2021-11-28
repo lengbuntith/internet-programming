@@ -1,0 +1,104 @@
+.main {
+    margin-left: 22%;
+    position: relative;
+    padding: 80px;
+}
+
+.title{
+    border-bottom: 2px solid orange;
+    width: max-content;
+}
+
+.avatar{
+    width: 80px; 
+    margin-top: 50px;
+    outline-width: 3px;
+    outline-style: solid;
+    border-radius: 50%;
+    outline-color: #ddd;
+}
+
+.qoute {
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 200px;
+    font-style: italic;
+    position: absolute;
+    left: 50px;
+}
+
+.user {
+    position: absolute;
+    bottom: 25px;
+}
+
+.testimonials{
+    margin-top: 30px;
+    position: relative;
+    height: 239px;
+    width: 100%;
+}
+
+.services {
+    margin-top: 30px;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.services img {
+    width: 80px;
+    height: 100px;
+}
+
+.services h4 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.services p {
+    max-width: 200px;
+}
+
+
+.clients {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.clients img {
+    width: 80px;
+    height: 80px;
+}
+
+.fun-facts {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+}
+
+.fun-facts div {
+    border: 3px solid #eee;
+    border-radius: 10px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fun-facts div:hover{
+    background: #eee;
+}
+
+.fun-facts h4 {
+    margin-top: 20px;
+}
+
+.fun-facts h3 {
+    margin-top: 10px;
+    color: orange
+}
