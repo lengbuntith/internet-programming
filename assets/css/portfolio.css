@@ -1,0 +1,63 @@
+
+.main {
+    margin-left: 22%;
+}
+
+.path {
+    padding-top: 50px;
+    padding-left: 75px;
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px ;
+}
+
+.btn-active {
+    background: orange !important;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    background: white;
+    margin-right: 5px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+
+@media (min-width: 768px) {
+    .gallery img {
+        width: 30%;
+        margin: 1%;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .gallery img {
+        width: 40%;
+        margin: 1%;
+    }
+}
+
+@media (max-width: 426px) {
+    .gallery img {
+        width: 100%;
+        margin-bottom: 4%;
+    }
+}

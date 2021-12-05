@@ -1,0 +1,61 @@
+
+.main {
+    margin-left: 22%;
+}
+
+.path {
+    padding-top: 50px;
+    padding-left: 75px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+img {
+    width: 100%;
+}
+
+.box .des {
+    position: relative;
+}
+
+.box .des .date {
+    position: absolute;
+    top: -50px;
+    right: 20px;
+    background: orange;
+    height: 65px;
+    width: 60px;
+    color: white;
+}
+
+.box .des {
+    text-align: center;
+    padding: 30px;
+}
+
+.box .des h5{
+    opacity: 0.6;
+    padding-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .gallery  .box {
+        width: 46%;
+        margin: 1%;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery  .box {
+        width: 100%;
+        margin: 4%;
+    }
+}
