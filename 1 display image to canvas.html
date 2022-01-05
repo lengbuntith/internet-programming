@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image</title>
+    <style>
+      #image_display {
+        border: solid 10px rgb(109, 104, 104);
+      }
+      .contain {
+        background-color: rgb(109, 104, 104);
+        width: 520px;
+        color: white;
+        padding: 10px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <canvas width="500" height="500" id="image_display"></canvas>
+      <div class="contain">
+        <div>Canvas 👻: Insert me an image please!</div>
+        <input type="file" id="img" name="img" accept="image/*" />
+      </div>
+    </center>
+
+    <script>
+      var img = document.getElementById("img");
+      img.addEventListener("change", (event) => {
+        console.log(event.target.files[0]);
+        handlerImage(event.target.files[0]);
+      });
+
+      function handlerImage(img_src) {
+        var reader = new FileReader();
+        reader.onload = function (event) {
+          var img = new Image();
+          img.onload = function () {
+            const canvas = document.getElementById("image_display");
+            const ctx = canvas.getContext("2d");
+            canvas.width = 500;
+            canvas.height = 500;
+            ctx.drawImage(this, 0, 0, this.width, this.height);
+          };
+          img.src = event.target.result;
+        };
+        reader.readAsDataURL(img_src);
+      }
+    </script>
+  </body>
+</html>
