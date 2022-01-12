@@ -1,0 +1,63 @@
+#container {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+#left {
+  width: 300px;
+  margin-right: 10px;
+  padding: 20px;
+  line-height: 25px;
+  background: #ddd;
+}
+
+#right {
+  width: 100%;
+  background: #ddd;
+}
+
+#listbook {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px;
+  height: 250px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 150px;
+  background-position: center center;
+  background: #fff;
+}
+
+.card-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+
+.card-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+}
+
+.list-style {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

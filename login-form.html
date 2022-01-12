@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/login.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box" id="loginform">
+        <div>
+          <ul class="list-style">
+            <li>Given login info:</li>
+            <li>Email: gic@gmail.com</li>
+            <li>Pwd: Gic123</li>
+          </ul>
+        </div>
+
+        <div class="box-login">
+          <div class="image">
+            <img width="200" src="/assets/images/logo.png" alt="" />
+          </div>
+
+          <form id="loginForm" class="form">
+            <label for="email">Email</label> <br />
+            <input type="email" id="email" required placeholder="Enter email" />
+            <br />
+            <label for="password">Password</label> <br />
+            <input
+              type="password"
+              id="password"
+              required
+              placeholder="Enter password"
+            />
+            <br />
+
+            <input type="submit" value="Login" id="login" />
+          </form>
+        </div>
+      </div>
+
+      <div id="logged">
+        <h2>Welcome to Home Page</h2>
+        <p>You will be automatically logged out.</p>
+        <p>Keep refreshing page</p>
+        <button id="logout">Logout</button>
+      </div>
+    </div>
+
+    <script>
+      checkCookie();
+
+      function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + exdays);
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+
+      function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+
+      function checkCookie() {
+        let user = getCookie("email");
+        if (user != "") {
+          $("#loginform").hide();
+          $("#logged").show();
+        } else {
+          $("#loginform").show();
+          $("#logged").hide();
+        }
+      }
+
+      $(document).on("submit", "#loginForm", function(e) {
+        e.preventDefault();
+        var email = e.target.email.value;
+        var password = e.target.password.value;
+
+        setCookie("email", email, 50000);
+        checkCookie();
+      });
+
+      $(document).on("click", "#logout", function() {
+        setCookie("email", "", -50000);
+        checkCookie();
+      });
+    </script>
+  </body>
+</html>

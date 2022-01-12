@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/books.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="left">
+        <form id="form" name="addbook">
+          <label for="name">Name</label> <br />
+          <input type="text" id="name" required /> <br />
+          <label for="category">Category</label> <br />
+          <input type="text" id="category" required /> <br />
+          <label for="price">Price</label> <br />
+          <input type="number" id="price" required /> <br />
+          <button type="submit" id="add">Add</button>
+          <button type="button" id="update" style="display: none">update</button>
+        </form>
+      </div>
+
+      <div id="right">
+        <div id="listbook" class="list-books">
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+         function display () {
+            let storageBooks = getBooks();
+            let books = storageBooks ? storageBooks : []
+            let list = ``
+            for (let i = 0; i< books.length; i++) {
+                list = list + `<div id="${i}" class="card">
+                <div class="card-top" id="${i}">
+                    <button id="delete">Delete</button>
+                    <button id="changename">Change Name</button>
+                </div>
+
+                <div class="card-image">
+                  <img width="120" src="/assets/images/book.png" />
+                </div>
+
+                <div class="card-bottom">
+                    <ul class="list-style">
+                        <li>Name: <span>${books[i].name}</span> </li>
+                        <li>Price: <span>${books[i].price} riel</span> </li>
+                        <li>Category: <span>${books[i].category}</span> </li>
+                    </ul>
+                </div>
+            </div>`
+            }
+            $('#listbook').html(list)
+         }
+
+        display();
+
+        function getBooks() {
+            let books = JSON.parse(localStorage.getItem("books"));
+            return books;
+        }
+
+        function setBooks(books) {
+            localStorage.setItem("books", JSON.stringify(books));
+        }
+       
+         //add book
+        $("#form").submit(function(e) {
+          e.preventDefault();
+          let name = e.target.name.value;
+          let category = e.target.category.value;
+          let price = e.target.price.value;
+
+          let books = getBooks();
+          
+          if (books)
+              books.push({ name: name, category: category, price: price });
+          else 
+            books = [{ name: name, category: category, price: price }]; 
+      
+          setBooks(books);
+          $("#form").trigger("reset");
+          display();
+        });
+
+       // delete books
+       $(document).on('click', '#delete', function() { 
+        console.log( $(this)[0].parentElement.id);
+        let books = getBooks();
+        books.splice($(this)[0].parentElement.id, 1)
+        setBooks(books);
+        display();
+       });
+       
+
+       let updateIndex = null;
+
+       //change name
+       $(document).on('click', '#changename', function() {
+         let books = getBooks();
+         let id = $(this)[0].parentElement.id;
+         updateIndex = id;
+
+         let bookSelected = books[id]
+          
+         $('#name')[0].value = bookSelected.name;
+         $('#category')[0].value = bookSelected.category;
+         $('#price')[0].value = bookSelected.price;
+         
+         $('#add').css('display', 'none');
+         $('#update').css('display', 'inline-block')
+       })
+
+       //update book
+       $(document).on('click', '#update', function(e) {
+          let name = e.target.parentElement[0].value
+          let category = e.target.parentElement[1].value
+          let price  = e.target.parentElement[2].value
+
+          let books = getBooks();
+          books[updateIndex].name = name
+          books[updateIndex].category = category
+          books[updateIndex].price = price
+
+          setBooks(books)
+          display();
+          $("#form").trigger("reset");
+          $('#add').css('display', 'inline-block');
+          $('#update').css('display', 'none')
+       })
+
+
+    </script>
+  </body>
+</html>
