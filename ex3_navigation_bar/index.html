@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav id="header">
+        <div class="logo">
+          <h1>NAV-BAR</h1>
+        </div>
+
+        <div class="page">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Projects</a>
+          <a href="#">Contact</a>
+        </div>
+
+        <div class="social">
+          <i class="fa fab fa-facebook"></i>
+          <i class="fa fab fa-twitter"></i>
+          <i class="fa fab fa-linkedin"></i>
+        </div>
+
+        <div class="menu">
+          <button id="menu" type="button">
+            <i id="icon" class="icon fa fa-bars"></i>
+          </button>
+
+          <div class="toggle" id="navigator">
+            <ul class="menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div id="main" class="main"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

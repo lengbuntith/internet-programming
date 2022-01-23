@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  background: rgb(233, 245, 244);
+  padding: 30px;
+  text-align: center;
+  height: 500px;
+}
+
+.title h1 {
+  color: rgb(255, 11, 194);
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.number h1 {
+  font-size: 100px;
+}
+
+.btn {
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:active {
+  background: rgb(255, 7, 160);
+  color: aliceblue;
+}
