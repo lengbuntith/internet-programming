@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            height: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: rgba(88, 90, 84, 0.8);
+        }
+        
+        .container>div {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .home {
+            margin: 2rem 0 0 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .home>div {
+            margin-bottom: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .home>img {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="items"></div>
+    <!-- <div class="container">
+        <div>Hello wolrd</div>
+        <div>1</div>
+    </div>
+    <div class="home">
+        <div>1</div>
+        <div>hello</div>
+    </div> -->
+
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        const id = urlParams.get('bookid');
+        let result = [];
+        let output = '';
+        fetch(`https://jsonplaceholder.typicode.com/photos/${id}`).then(async(res) => {
+            result = await res.json();
+            console.log(result)
+            output += `<div class="container">` +
+                `<div>${result.title}</div>` +
+                `<div>${result.albumId}</div>` +
+                `</div>` +
+                `<div class="home">` +
+                `<div>${result.id}</div>` +
+                `<img src="${result.url}" alt="#">` +
+                `</div>`
+
+            document.getElementsByClassName('items')[0].innerHTML = output;
+        });
+    </script>
+</body>
+
+</html>
