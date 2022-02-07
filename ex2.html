@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex2</title>
+  </head>
+  <body>
+    <script>
+      let promise1 = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("😀");
+        }, 2000);
+      });
+
+      let promise2 = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("😁");
+        }, 4000);
+      });
+
+      let promise3 = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("😂");
+        }, 3000);
+      });
+
+      let promise4 = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("🤣");
+        }, 5000);
+      });
+
+      let promise5 = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("😃");
+        }, 3000);
+      });
+
+      Promise.all([promise1, promise2, promise3, promise4, promise5]).then(() =>
+        console.log("All  tasks  are  ready!")
+      );
+    </script>
+  </body>
+</html>
