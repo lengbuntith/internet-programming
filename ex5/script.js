@@ -65,7 +65,7 @@ const renderData = (items) => {
 
 const api = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com/",
-  timeout: 1000,
+  timeout: 10000,
 });
 
 const getData = () => {
