@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "system",
+    "outFile": "index.js",
+    "watch": true,
+    "target": "ES2021"
+  }
+}
