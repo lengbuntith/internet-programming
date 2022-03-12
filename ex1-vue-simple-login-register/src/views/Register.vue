@@ -2,28 +2,49 @@
   <div class="box">
     <Welcome></Welcome>
     <div class="register">
-      <form style="border: 1px solid #ccc">
+      <form id="formRegister" style="border: 1px solid #ccc">
         <div class="container">
           <h1>Sign Up</h1>
           <p>Please fill in this form to create an account.</p>
           <hr />
 
+          <!-- email -->
           <label for="email"><b>Email</b></label>
           <input type="text" placeholder="Enter Email" name="email" required />
 
-          <label for="psw"><b>Password</b></label>
+          <!-- username -->
+          <label for="username"><b>Username</b></label>
           <input
-            type="password"
-            placeholder="Enter Password"
-            name="psw"
+            type="text"
+            placeholder="Enter Username"
+            name="username"
             required
           />
 
-          <label for="psw-repeat"><b>Repeat Password</b></label>
+          <!-- first name -->
+          <label for="firstName"><b>First Name</b></label>
+          <input
+            type="text"
+            placeholder="Enter First Name"
+            name="firstName"
+            required
+          />
+
+          <!-- last name -->
+          <label for="lastName"><b>Last Name</b></label>
+          <input
+            type="text"
+            placeholder="Enter Last Name"
+            name="lastName"
+            required
+          />
+
+          <!-- password -->
+          <label for="password"><b>Password</b></label>
           <input
             type="password"
-            placeholder="Repeat Password"
-            name="psw-repeat"
+            placeholder="Enter Password"
+            name="password"
             required
           />
 
@@ -42,7 +63,10 @@
             <a href="#" style="color: dodgerblue">Terms & Privacy</a>.
           </p>
 
-          <div class="clearfix">
+          <div
+            class="clearfix"
+            style="display: flex; justify-content: space-between"
+          >
             <button type="submit" class="signupbtn">Sign Up</button>
           </div>
         </div>
