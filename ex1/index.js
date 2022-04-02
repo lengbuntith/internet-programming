@@ -15,8 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 //connect mongoDB
-const uri =
-  "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false";
+const uri = "mongodb://localhost:27017/tp11";
 mongoose
   .connect(uri)
   .then((result) => app.listen(port))
